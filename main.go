@@ -50,21 +50,6 @@ func initSearcher() {
         StorageFolder: "./riot-index",
     })
 
-    text := "Google Is Experimenting With Virtual Reality Advertising"
-    text1 := `Google accidentally pushed Bluetooth google update for Home speaker early`
-    text2 := `Google is testing another Search results layout with rounded cards, new colors, and the 4 mysterious colored dots again`
-    text3 := "Google testing text search"
-    text4 := "Google testing search"
-
-    // Add the document to the index, docId starts at 1
-    searcher.IndexDoc(1, types.DocIndexData{Content: text})
-    searcher.IndexDoc(2, types.DocIndexData{Content: text1})
-    searcher.IndexDoc(3, types.DocIndexData{Content: text2})
-    searcher.IndexDoc(4, types.DocIndexData{Content: text3})
-    searcher.IndexDoc(5, types.DocIndexData{Content: text4})
-
-    searcher.Flush()
-
     log.Printf("Search flush\n")
 }
 
