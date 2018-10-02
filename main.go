@@ -18,7 +18,6 @@ func main() {
     errorChain := alice.New(loggerHandler, recoverHandler)
 
     var r = mux.NewRouter()
-    r.HandleFunc("/", rootHandler)
     r.HandleFunc("/search", searchHandler).Name("search")
     r.HandleFunc("/index", indexHandler).Name("index")
 
@@ -68,13 +67,6 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
     searcher.IndexDoc(id, types.DocIndexData{Content: content})
     log.Println("index %d", id)
 }
-
-
-
-func rootHandler(w http.ResponseWriter, r *http.Request) {
-    log.Printf("tadam")
-}
-
 
 func loggerHandler(h http.Handler) http.Handler {
 
